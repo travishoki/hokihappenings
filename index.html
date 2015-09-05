@@ -1,0 +1,47 @@
+<!doctype html>
+<html ng-app="APP">
+  <head>
+  	<title>Hoki Happenings</title>
+	<!--Bootstrap-->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">  </head>
+	<!-- Custom -->
+	<link href="css/style.css" rel="stylesheet">
+	
+	<meta name="viewport" content="width=device-width" />  
+  </head>
+  <body ng-controller="mainCtrl">
+  	<header>
+		<div class="branding" ui-sref="home">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
+				<path d="M100,4.3C47.2,4.3,4.3,47.2,4.3,100s42.8,95.7,95.7,95.7s95.7-42.8,95.7-95.7S152.8,4.3,100,4.3z M30.3,130.8  c-2.5-5.7-4.4-11.8-5.5-18.1h150.2c-1.1,6.4-2.9,12.4-5.5,18.1H30.3z M24.9,87.3c1-6.2,2.8-12.1,5.3-17.7h139.7  c2.4,5.6,4.2,11.5,5.3,17.7H24.9z M151.8,44.2H48.2C61.8,31.5,80,23.8,100,23.8S138.2,31.5,151.8,44.2z M48.6,156.2h102.8  c-13.6,12.4-31.6,19.9-51.4,19.9S62.2,168.6,48.6,156.2z"/>
+			</svg>
+			<h1>Hoki Happenings</h1>
+		</div><!-- branding -->
+  	</header>
+
+    <div id="container">
+    	<div id="content">
+			<div ui-view></div>
+    	</div><!-- content -->
+		<footer>
+			<!-- jQuery -->
+			<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+			<!-- Lazy Load -->
+		    <script src="js/jquery.lazyload.min.js"></script>
+			<!-- Bootstrap -->
+			<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+			<!-- Angular -->
+		    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+			<script src="js/angular-ui-router.min.js"></script>
+			<!-- Angular Flow Grid -->
+		    <script src="js/angular-flow-grid.js"></script>
+			<!-- Custom -->
+		    <script src="js/main-controller.js"></script>
+
+		    <p>Copyright HokiHappenings.com 2015 - All rights reserved</p>
+		</footer>
+    </div><!-- container -->
+  </body>
+</html>

@@ -1,0 +1,11 @@
+<div id="gallery">
+	<h1>{{sectionInfo.title}}</h1>
+	<h2>{{sectionInfo.date}}</h2>
+	<ul class="flowGrid" ng-flow-grid="homePageGird" min-item-width="300">
+	  <li class="flowGridItem" ng-repeat="item in gallery_images">
+	      <a href="">
+			<img class="lazy" ng-src="images/global/grey-h.gif" data-original="{{item}}">
+	      </a>
+	  </li>
+	</ul>
+</div><!-- gallery -->

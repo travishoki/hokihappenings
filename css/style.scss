@@ -1,0 +1,177 @@
+/* ------------------- General -------------------
+-------------------------------------------------------------------------------------------------------------------------------------*/
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+/* ------------------- Header -------------------
+-------------------------------------------------------------------------------------------------------------------------------------*/
+header {
+	padding: 10px;
+	width: 100%;
+	z-index: 100;
+}
+header {
+	.branding {
+		cursor: pointer;
+		h1 {
+			margin: 0;
+		}
+		svg {
+			float: left;
+			fill: black;
+		}
+		@media screen and (max-width: 499px){ /* Mobile */
+			&{
+				width: 220px;
+				display: block;
+				margin: 0 auto;
+				h1 {
+					font-size: 20px;
+					line-height: 40px;
+				}
+				svg {
+					width: 40px;
+					height: 40px;
+					margin-right: 10px;
+				}
+			}
+		}
+		@media screen and (min-width: 500px){ /* Tablet */
+			&{
+				h1 {
+					font-size: 40px;
+					line-height: 80px;
+				}
+				svg {
+					width: 80px;
+					height: 80px;
+					margin-right: 20px;
+				}
+			}
+		}
+	}
+}
+
+
+/* ------------------- footer -------------------
+-------------------------------------------------------------------------------------------------------------------------------------*/
+footer {
+	text-align: center;
+	padding: 20px;
+}
+
+
+/* ------------------- Content -------------------
+-------------------------------------------------------------------------------------------------------------------------------------*/
+#content {
+	padding: 20px;
+	h1, h2 {
+		text-align: center;
+		margin: 0;
+	}
+	h1 {
+	}
+	h2 {
+		font-size: 20px;
+	}
+}
+
+
+/* ------------------- Gallery -------------------
+-------------------------------------------------------------------------------------------------------------------------------------*/
+#gallery {
+}
+
+
+
+/* ------------------- Items -------------------
+-------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 768px) and (max-width: 991px){
+	.col-sm-6:nth-child(odd) {
+		clear: both;
+	}
+}
+@media screen and (min-width: 992px) and (max-width: 1199px){
+	.col-md-4:nth-child(3n+1) {
+		clear: both;
+	}
+}
+@media screen and (min-width: 1200px) {
+	.col-lg-3:nth-child(4n+1) {
+		clear: both;
+	}
+}
+
+ul.items {
+	padding: 0;
+	li {
+		list-style: none;
+		text-align: center;
+		text-decoration: none;
+		padding: 10px;
+		margin: 0;
+		cursor: pointer;
+		.img-holder {
+			position: relative;
+			height: 200px;
+			width: 200px;
+			display: block;
+			margin: 0 auto;
+			.img-overlay {
+				background: rgba(0,0,0,.5);
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				border-radius: 100px;
+				display: none;
+				line-height: 200px;
+				color: white;
+			}
+		}
+		&:hover {
+			color: grey;
+			.img-holder .img-overlay {
+				display: block;
+			}
+		}
+		@media screen and (max-width: 500px) {
+			& {
+				margin-bottom: 20px;
+				padding-bottom: 20px;
+				border-bottom: solid 1px #ccc;
+			}
+			&:first-child {
+				border-top: solid 1px #ccc;
+			}
+		}
+	}
+}
+
+
+/* Flow Grid
+------------------------------------------------------------------------*/
+*{box-sizing: border-box;}
+.flowGrid {
+	padding: 0;
+	list-style: none;
+}
+.flowGrid:before,.flowGrid:after{
+    content: "";
+    display: table;
+}
+.flowGrid:after{
+    clear:both;
+}
+.flowGridItem{ margin-bottom:10px;}
+.flowGridItem img{width:100%;}
+.flowGridColumn{
+    float: left;
+    padding-left: 10px;
+}
+.flowGridColumn:last-of-type{
+    padding-right: 10px;
+}
+
+
+
