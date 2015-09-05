@@ -83,7 +83,33 @@ footer {
 #gallery {
 }
 
+/* ------------------- Items -------------------
+-------------------------------------------------------------------------------------------------------------------------------------*/
+button {
+	background: grey;
+	color: white;
+	border: none;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	padding: 0;
+	&:hover,
+	&.active {
+		background: blue;
+	}
+	&:focus,
+	&:active:focus {
+		outline: none;
+	}
+}
 
+.buttons {
+	margin: 0 0 20px 0;
+	height: 40px;
+	button {
+		float: right;
+	}
+}
 
 /* ------------------- Items -------------------
 -------------------------------------------------------------------------------------------------------------------------------------*/
@@ -107,15 +133,12 @@ ul.items {
 	padding: 0;
 	li {
 		list-style: none;
-		text-align: center;
 		text-decoration: none;
 		padding: 10px;
 		margin: 0;
 		cursor: pointer;
 		.img-holder {
 			position: relative;
-			height: 200px;
-			width: 200px;
 			display: block;
 			margin: 0 auto;
 			.img-overlay {
@@ -146,6 +169,43 @@ ul.items {
 			}
 		}
 	}
+	&.grid-view {
+		li {
+			text-align: center;
+			.img-holder {
+				height: 200px;
+				width: 200px;
+			}
+		}
+	}		
+	&.list-view {
+		li {
+			width: 100%;
+			position: relative;
+			min-height: 70px;
+			&:nth-child(even){
+				background: #eee;
+			}
+			.text-holder {
+				margin-left: 75px;
+				h3 {
+					margin: 0;
+				}
+				p {
+					margin: 0;
+				}
+			}
+			.img-holder {
+				position: absolute;
+				top: 10px;
+				left: 10px;
+				img {
+					height: 50px;
+					width: 50px;
+				}
+			}
+		}
+	}		
 }
 
 
@@ -155,6 +215,7 @@ ul.items {
 .flowGrid {
 	padding: 0;
 	list-style: none;
+	margin-top: 30px;
 }
 .flowGrid:before,.flowGrid:after{
     content: "";

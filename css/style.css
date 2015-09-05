@@ -62,6 +62,27 @@ footer {
 -------------------------------------------------------------------------------------------------------------------------------------*/
 /* ------------------- Items -------------------
 -------------------------------------------------------------------------------------------------------------------------------------*/
+button {
+  background: grey;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 0; }
+  button:hover, button.active {
+    background: blue; }
+  button:focus, button:active:focus {
+    outline: none; }
+
+.buttons {
+  margin: 0 0 20px 0;
+  height: 40px; }
+  .buttons button {
+    float: right; }
+
+/* ------------------- Items -------------------
+-------------------------------------------------------------------------------------------------------------------------------------*/
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .col-sm-6:nth-child(odd) {
     clear: both; } }
@@ -75,15 +96,12 @@ ul.items {
   padding: 0; }
   ul.items li {
     list-style: none;
-    text-align: center;
     text-decoration: none;
     padding: 10px;
     margin: 0;
     cursor: pointer; }
     ul.items li .img-holder {
       position: relative;
-      height: 200px;
-      width: 200px;
       display: block;
       margin: 0 auto; }
       ul.items li .img-holder .img-overlay {
@@ -106,6 +124,30 @@ ul.items {
         border-bottom: solid 1px #ccc; }
       ul.items li:first-child {
         border-top: solid 1px #ccc; } }
+  ul.items.grid-view li {
+    text-align: center; }
+    ul.items.grid-view li .img-holder {
+      height: 200px;
+      width: 200px; }
+  ul.items.list-view li {
+    width: 100%;
+    position: relative;
+    min-height: 70px; }
+    ul.items.list-view li:nth-child(even) {
+      background: #eee; }
+    ul.items.list-view li .text-holder {
+      margin-left: 75px; }
+      ul.items.list-view li .text-holder h3 {
+        margin: 0; }
+      ul.items.list-view li .text-holder p {
+        margin: 0; }
+    ul.items.list-view li .img-holder {
+      position: absolute;
+      top: 10px;
+      left: 10px; }
+      ul.items.list-view li .img-holder img {
+        height: 50px;
+        width: 50px; }
 
 /* Flow Grid
 ------------------------------------------------------------------------*/
@@ -114,7 +156,8 @@ ul.items {
 
 .flowGrid {
   padding: 0;
-  list-style: none; }
+  list-style: none;
+  margin-top: 30px; }
 
 .flowGrid:before, .flowGrid:after {
   content: "";

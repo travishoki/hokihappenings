@@ -1,30 +1,94 @@
 var sectionItems = [
 	{
-		id: 1,
-		title: 'Junior Prom',
-		date: 'May 2008',
-		image: 'prom-2008.png',
-		url: 'prom-2008',
+		id: 15,
+		title: 'Disk Golf',
+		date: 'Aug 9th, 2015',
+		image: 'disk-golf.png',
+		url: 'disk-golf',
 		gallery: true
 	},
 	{
-		id: 8,
-		title: 'Picture Date',
-		date: '2008',
-		image: 'picture-date.png',
-		url: 'picture-date',
+		id: 14,
+		title: 'Travis Bday',
+		date: 'July 8th, 2015',
+		image: 'travis-bday-2015.png',
+		url: 'travis-bday-2015',
 		gallery: true
 	},
 	{
-		id: 9,
-		title: 'Home Coming',
-		date: '2008',
-		image: 'home-coming.png',
-		url: 'home-coming',
+		id: 13,
+		title: 'Camping',
+		date: 'July 2015',
+		image: 'camping.png',
+		url: 'camping',
 		gallery: true
+	},
+	{
+		id: 12,
+		title: 'Honeymoon',
+		date: 'June 2015',
+		image: 'honeymoon.png',
+		url: 'honeymoon',
+		gallery: true
+	},
+	{
+		id: 11,
+		title: 'Wedding',
+		date: 'June 6th, 2015',
+		image: 'wedding.png',
+		url: 'http://wedding.hokihappenings.com/',
+		gallery: false
 	},
 	{
 		id: 10,
+		title: 'Save the Date',
+		date: 'Dec 4th, 2014',
+		image: 'save-the-date.png',
+		url: 'http://wedding.hokihappenings.com/#/save-the-date',
+		gallery: false
+	},
+	{
+		id: 9,
+		title: 'Proposal',
+		date: 'Dec 4th, 2014',
+		image: 'proposal.png',
+		url: 'http://wedding.hokihappenings.com/#/proposal',
+		gallery: false
+	},
+	{
+		id: 8,
+		title: 'Date Night Movie In A For',
+		date: 'Dec 22, 2014',
+		image: 'date-night-movie-in-a-fort.png',
+		url: 'date-night-movie-in-a-fort',
+		gallery: true
+	},
+	{
+		id: 7,
+		title: 'High School Graduation',
+		date: 'May 2009',
+		image: 'high-school-graduation.png',
+		url: 'high-school-graduation',
+		gallery: true
+	},
+	{
+		id: 6,
+		title: 'Senior Prom',
+		date: 'May 2009',
+		image: 'prom-2009.png',
+		url: 'prom-2009',
+		gallery: true
+	},
+	{
+		id: 5,
+		title: 'Girl Prom',
+		date: '2009',
+		image: 'girl-prom.png',
+		url: 'girl-prom',
+		gallery: true
+	},
+	{
+		id: 4,
 		title: 'Preference',
 		date: '2009',
 		image: 'preference.png',
@@ -33,53 +97,28 @@ var sectionItems = [
 	},
 	{
 		id: 3,
-		title: 'Girl Prom',
-		date: '2009',
-		image: 'girl-prom.png',
-		url: 'girl-prom',
+		title: 'Picture Date',
+		date: '2008',
+		image: 'picture-date.png',
+		url: 'picture-date',
 		gallery: true
 	},
 	{
-		id: 3,
-		title: 'Senior Prom',
-		date: 'May 2009',
-		image: 'prom-2009.png',
-		url: 'prom-2009',
+		id: 2,
+		title: 'Home Coming',
+		date: '2008',
+		image: 'home-coming.png',
+		url: 'home-coming',
 		gallery: true
 	},
 	{
-		id: 4,
-		title: 'High School Graduation',
-		date: 'May 2009',
-		image: 'high-school-graduation.png',
-		url: 'high-school-graduation',
+		id: 1,
+		title: 'Junior Prom',
+		date: 'May 2008',
+		image: 'prom-2008.png',
+		url: 'prom-2008',
 		gallery: true
 	},
-	{
-		id: 5,
-		gallery: false,
-		title: 'Wedding',
-		date: 'June 6th, 2015',
-		image: 'wedding.png',
-		url: 'http://wedding.hokihappenings.com/',
-		gallery: false
-	},
-	{
-		id: 6,
-		title: 'Save the Date',
-		date: 'Dec 4th, 2014',
-		image: 'save-the-date.png',
-		url: 'http://wedding.hokihappenings.com/#/save-the-date',
-		gallery: false
-	},
-	{
-		id: 7,
-		title: 'Proposal',
-		date: 'Dec 4th, 2014',
-		image: 'proposal.png',
-		url: 'http://wedding.hokihappenings.com/#/proposal',
-		gallery: false
-	}
 ];
 
 
@@ -88,6 +127,11 @@ var app = angular.module('APP', ['ui.router','ngFlowGrid'])
 	$scope.sectionItems = sectionItems;
 })
 .controller("homeCtrl", function($scope, $state){
+
+	$scope.init = function(){
+		$scope.list_view = false;
+	};//init
+
 	$scope.clickItem = function(item){
 		if(item.gallery){
 			$state.go('gallery', {id: item.id});
@@ -95,6 +139,9 @@ var app = angular.module('APP', ['ui.router','ngFlowGrid'])
 			window.open(item.url);
 		}
 	};//clickItem
+
+	$scope.init();
+
 })
 .directive('lazy', function($timeout) {
 	return {
