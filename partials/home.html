@@ -6,11 +6,11 @@
     <li ng-repeat="item in sectionItems" class="col-sm-6 col-md-4 col-lg-3" ng-click="clickItem(item)">
     	<div class="text-holder">
 	    	<h3>{{item.title}}</h3>
-	    	<p>{{item.date}}</p>
+	    	<p>{{item.event_year}}-{{item.event_month}}-{{item.event_day}}</p>
 	    </div>
     	<div class="img-holder">
     		<div class="img-overlay">View</div>
-	    	<img ng-src="images/item-thumbnail/{{item.image}}"/>
+	    	<img ng-src="images/item-thumbnail/{{item.slug}}.png"/>
 		</div>
 	</li>
 </ul><!-- row -->
